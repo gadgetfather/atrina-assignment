@@ -1,7 +1,7 @@
 import React from "react";
 import { Hero, ProductCard } from "../../components";
 import styles from "./Homepage.module.css";
-export default function Homepage() {
+export function Homepage() {
   return (
     <div className={styles.homepage_container}>
       <Hero />
