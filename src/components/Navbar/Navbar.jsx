@@ -1,10 +1,16 @@
-import React from "react";
-import { useState } from "react";
+import React, { useEffect } from "react";
+
 import { IcRoundMenu } from "../../utility/Icons";
 import styles from "./Navbar.module.css";
 export function Navbar(props) {
   const { isOpen, setIsOpen } = props;
-
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isOpen]);
   return (
     <nav className={styles.navbar}>
       <div className={styles.hamburger_menu} onClick={() => setIsOpen(!isOpen)}>

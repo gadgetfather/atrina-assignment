@@ -6,6 +6,8 @@
   background-color: #c4dfaa;
   gap: 0.5rem;
   grid-area: head;
+  position: sticky;
+  top: 0;
 }
 .brand_name {
   font-size: 1.5rem;
