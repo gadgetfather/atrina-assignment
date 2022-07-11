@@ -1,0 +1,13 @@
+.homepage_container {
+  grid-area: content-area;
+  /* outline: 1px solid; */
+  min-height: calc(100vh - 3rem);
+  padding-bottom: 2rem;
+}
+.section_title {
+  text-align: center;
+}
+.product_section {
+  display: flex;
+  padding: 0.5rem;
+}
