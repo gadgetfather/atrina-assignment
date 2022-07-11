@@ -1,0 +1,30 @@
+.InventoryPage {
+  grid-area: content-area;
+  min-height: calc(100vh - 3rem);
+  border: 1px solid;
+}
+.section_title {
+  text-align: center;
+}
+.inventory_section {
+  display: flex;
+  /* flex-direction: column; */
+  gap: 0.5rem;
+}
+.left_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+  gap: 0.5rem;
+  outline: 1px solid;
+  overflow: auto;
+
+  width: 70%;
+}
+.right_section {
+  margin-right: 0.5rem;
+  outline: 1px solid;
+  width: 30%;
+  padding: 0.5rem;
+}
