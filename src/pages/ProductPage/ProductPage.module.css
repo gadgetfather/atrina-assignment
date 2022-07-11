@@ -1,0 +1,18 @@
+.ProductPage {
+  outline: 1px solid;
+  grid-area: content-area;
+  min-height: calc(100vh - 3rem);
+  outline: 1px solid;
+  padding-bottom: 2rem;
+}
+.section_title {
+  text-align: center;
+}
+.product_grid {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+  justify-content: center;
+
+  grid-template-columns: repeat(auto-fill, minmax(200px, 250px));
+}
