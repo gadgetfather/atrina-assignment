@@ -3,7 +3,12 @@
   --secondary-color: #90c8ac;
 }
 body {
-  background-color: #eeecd3;
+  background-color: #f8f0e3;
+  font-family: "Roboto Slab", serif;
+}
+a {
+  text-decoration: none;
+  color: black;
 }
 svg {
   cursor: pointer;
