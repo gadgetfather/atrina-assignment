@@ -1,0 +1,16 @@
+:root {
+  --primary-color: #73a9ad;
+  --secondary-color: #90c8ac;
+}
+body {
+  background-color: #eeecd3;
+}
+svg {
+  cursor: pointer;
+}
+.page_container {
+  display: grid;
+  grid-template-areas:
+    "head head"
+    "content-area content-area";
+}
