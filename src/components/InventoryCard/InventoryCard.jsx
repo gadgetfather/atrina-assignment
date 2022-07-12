@@ -1,18 +1,36 @@
-import React from "react";
-import { IcRoundEdit } from "../../utility/Icons";
+import React, { useEffect } from "react";
+import { useInventory } from "../../context/inventory-context";
+import { IcRoundDelete, IcRoundEdit } from "../../utility/Icons";
 import styles from "./InventoryCard.module.css";
-export function InventoryCard() {
+export function InventoryCard(props) {
+  const { data_id, title, price, categoryName, image, stock, size } = props;
+  const { inventory, setInventory, setEditItem, setEditModal } = useInventory();
+  const handleDeleteProduct = (e, id) => {
+    const newArr = inventory.filter((product) => product.data_id !== id);
+    setInventory(newArr);
+  };
+  const handleEdit = () => {
+    setEditModal(true);
+    setEditItem(props);
+    document.body.style.overflow = "hidden";
+  };
+
   return (
     <div className={styles.card_container}>
-      <IcRoundEdit className={styles.edit_icon} />
+      <IcRoundEdit onClick={handleEdit} className={styles.edit_icon} />
+      <IcRoundDelete
+        onClick={(e) => handleDeleteProduct(e, data_id)}
+        className={styles.delete_icon}
+      />
       <div className={styles.image_container}>
-        <img src="https://picsum.photos/200" alt="product" />
+        <img className={styles.image} src={image} alt="product" />
       </div>
       <div className={styles.product_details}>
-        <h2>Title</h2>
-        <p>Product Category</p>
-        <p>Price</p>
-        <p>Quantity</p>
+        <h2>{title}</h2>
+        <p>Category: {categoryName}</p>
+        <p>Price: Rs.{price}</p>
+        <p>Stock: {stock}</p>
+        <p>Size: {size}</p>
         <p>
           Description: Lorem ipsum dolor sit amet consectetur adipisicing elit
         </p>
