@@ -1,9 +1,10 @@
 :root {
-  --primary-color: #73a9ad;
-  --secondary-color: #90c8ac;
+  --primary-color: #c0f0fd;
+  --secondary-color: #f0f0f0;
+  --border-color: rgb(195, 195, 195);
 }
 body {
-  background-color: #f8f0e3;
+  background-color: var(--secondary-color);
   font-family: "Roboto Slab", serif;
 }
 a {
@@ -18,4 +19,13 @@ svg {
   grid-template-areas:
     "head head"
     "content-area content-area";
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(119, 119, 119);
+  border-radius: 5px;
 }
