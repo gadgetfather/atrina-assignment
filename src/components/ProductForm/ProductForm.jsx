@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import styles from "./ProductForm.module.css";
 import { useInventory } from "../../context/inventory-context";
+import toast from "react-hot-toast";
 const initialState = {
   title: "",
   price: "",
   categoryName: "",
   size: "",
   stock: "",
+  image: "",
 };
 export function ProductForm() {
   const { inventory, setInventory } = useInventory();
@@ -15,12 +17,24 @@ export function ProductForm() {
   const handleAddProduct = (e) => {
     e.preventDefault();
     const lastId = inventory.at(-1);
+    if (
+      formDetails.categoryName !== "" &&
+      formDetails.image !== "" &&
+      formDetails.price !== "" &&
+      formDetails.size !== "" &&
+      formDetails.stock !== "" &&
+      formDetails.title !== ""
+    ) {
+      setInventory([
+        { ...formDetails, data_id: lastId.data_id + 1 },
+        ...inventory,
+      ]);
+      toast.success("Product Added");
 
-    setInventory([
-      { ...formDetails, data_id: lastId.data_id + 1 },
-      ...inventory,
-    ]);
-    setFormDetails(initialState);
+      setFormDetails(initialState);
+    } else {
+      toast.error("Fill All details");
+    }
   };
 
   return (
@@ -28,6 +42,7 @@ export function ProductForm() {
       <div className={styles.form_element}>
         <label htmlFor="Name">Name:</label>
         <input
+          required
           placeholder="Enter Product name"
           onChange={(e) =>
             setFormDetails({ ...formDetails, title: e.target.value })
@@ -39,6 +54,7 @@ export function ProductForm() {
       <div className={styles.form_element}>
         <label htmlFor="Name">Price:</label>
         <input
+          required
           placeholder="Enter price"
           onChange={(e) =>
             setFormDetails({ ...formDetails, price: e.target.value })
@@ -50,6 +66,7 @@ export function ProductForm() {
       <div className={styles.form_element}>
         <label htmlFor="Name">category:</label>
         <select
+          value={formDetails.categoryName}
           onChange={(e) =>
             setFormDetails({ ...formDetails, categoryName: e.target.value })
           }
@@ -64,6 +81,7 @@ export function ProductForm() {
       <div className={styles.form_element}>
         <label htmlFor="Name">Size:</label>
         <select
+          value={formDetails.size}
           onChange={(e) =>
             setFormDetails({ ...formDetails, size: e.target.value })
           }
@@ -81,12 +99,24 @@ export function ProductForm() {
       <div className={styles.form_element}>
         <label htmlFor="Name">Stock:</label>
         <input
+          required
           placeholder="Enter Stock"
           onChange={(e) =>
             setFormDetails({ ...formDetails, stock: e.target.value })
           }
           value={formDetails.stock}
           type="number"
+        />
+      </div>
+      <div className={styles.form_element}>
+        <label htmlFor="Name">Image URL:</label>
+        <input
+          placeholder="Enter Image URL"
+          onChange={(e) =>
+            setFormDetails({ ...formDetails, image: e.target.value })
+          }
+          value={formDetails.image}
+          type="text"
         />
       </div>
       <button
