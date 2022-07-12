@@ -4,36 +4,47 @@
   gap: 1rem;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   width: 40rem;
-  /* outline: 1px solid; */
   position: relative;
-  background-color: rgb(220, 147, 53);
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  margin-bottom: 1rem;
 }
+
 .image_container {
   width: 15rem;
   height: 15rem;
-  /* outline: 1px solid; */
 }
+
+.image_container img {
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+}
+
 .product_image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .right_section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 0.5rem;
 }
+
 .modify_quantity {
   display: flex;
   gap: 0.5rem;
   align-items: center;
 }
+
 .quantity_button {
   padding: 0rem 0.4rem;
   cursor: pointer;
   font-size: 1.2rem;
 }
+
 .close_icon {
   position: absolute;
   top: 10px;

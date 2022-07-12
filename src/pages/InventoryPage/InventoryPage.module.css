@@ -1,30 +1,38 @@
 .InventoryPage {
   grid-area: content-area;
-  min-height: calc(100vh - 3rem);
-  border: 1px solid;
+  min-height: calc(100vh - 3.5rem);
 }
+
 .section_title {
   text-align: center;
+  margin: 1rem;
 }
+
 .inventory_section {
   display: flex;
-  /* flex-direction: column; */
   gap: 0.5rem;
 }
+
 .left_section {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  height: 500px;
-  gap: 0.5rem;
-  outline: 1px solid;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 640px;
+  outline: 1px solid var(--border-color);
   overflow: auto;
-
   width: 70%;
+  margin-left: 0.5rem;
 }
+
 .right_section {
   margin-right: 0.5rem;
-  outline: 1px solid;
+  outline: 1px solid var(--border-color);
   width: 30%;
   padding: 0.5rem;
+}
+
+.right_section h2 {
+  text-align: center;
+  font-weight: 500;
 }
