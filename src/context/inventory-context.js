@@ -1,4 +1,4 @@
-import { Children, createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { products } from "../data/Data";
 
 const inventoryContext = createContext();
@@ -12,6 +12,7 @@ const InventoryProvider = ({ children }) => {
     categoryName: "",
     size: "",
     stock: "",
+    image: "",
   });
   const [editModal, setEditModal] = useState(false);
 
