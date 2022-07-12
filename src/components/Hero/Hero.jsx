@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Hero.module.css";
+import { Link } from "react-router-dom";
 export function Hero() {
   return (
     <div>
@@ -11,8 +12,9 @@ export function Hero() {
         />
         <div className={`${styles.hero_text} ${styles.overlay}`}>
           <div className={styles.text_container}>
-            <p>Choose what you like</p>
-            <button>Shop Now</button>
+            <h3>Try out today !</h3>
+
+            <Link to={"/ProductPage"}>Shop Now</Link>
           </div>
         </div>
       </div>
