@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useInventory } from "../../context/inventory-context";
 import { IcSharpClose } from "../../utility/Icons";
 import styles from "./EditModal.module.css";

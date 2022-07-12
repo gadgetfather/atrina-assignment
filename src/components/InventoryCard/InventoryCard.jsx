@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useInventory } from "../../context/inventory-context";
 import { IcRoundDelete, IcRoundEdit } from "../../utility/Icons";
 import styles from "./InventoryCard.module.css";
