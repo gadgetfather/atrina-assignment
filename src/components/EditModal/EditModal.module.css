@@ -8,26 +8,53 @@
   align-items: center;
   justify-content: center;
 }
+
 .modal {
-  background-color: aliceblue;
+  background-color: var(--secondary-color);
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
   border-radius: 0.2rem;
   gap: 0.5rem;
+  width: 20rem;
 }
-.edit_button {
-  padding: 0.2rem 0.4rem;
-}
-.form_element {
-  display: flex;
-  flex-direction: column;
-}
-.form_element input {
-  padding: 0.2rem 0.5rem;
-}
+
 .modal_header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.modal_header h2 {
+  font-weight: 500;
+}
+
+.form_element {
+  display: flex;
+  flex-direction: column;
+}
+
+.form_element label {
+  padding-bottom: 5px;
+}
+
+.form_element input {
+  border: none;
+  padding: 0.5rem 0.2rem;
+  outline: none;
+  background-color: inherit;
+  border-bottom: 1px solid;
+}
+
+.form_element select {
+  padding: 0.5rem 0.2rem;
+  border: none;
+  background-color: inherit;
+  border-bottom: 1px solid;
+  outline: none;
+}
+
+.edit_button {
+  padding: 0.4rem;
+  cursor: pointer;
 }

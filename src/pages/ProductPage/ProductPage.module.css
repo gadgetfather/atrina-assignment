@@ -1,8 +1,7 @@
 .ProductPage {
-  outline: 1px solid;
   grid-area: content-area;
-  min-height: calc(100vh - 3rem);
-  outline: 1px solid;
+  min-height: calc(100vh - 3.5rem);
+
   padding-bottom: 2rem;
 }
 .section_title {
