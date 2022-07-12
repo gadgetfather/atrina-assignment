@@ -1,4 +1,6 @@
 import React from "react";
+import toast, { Toaster } from "react-hot-toast";
+
 import { useCart } from "../../context/cart-context";
 import { ADD_TO_CART } from "../../reducer/cartReducer";
 import styles from "./ProductCard.module.css";
@@ -14,6 +16,7 @@ export function ProductCard(props) {
 
   const handleCart = (props) => {
     dispatch({ type: ADD_TO_CART, payload: props });
+    toast.success("Added To Cart");
   };
   const navigateToCart = () => {
     navigate("/cart");

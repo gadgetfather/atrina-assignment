@@ -1,4 +1,6 @@
 import React from "react";
+import { Toaster } from "react-hot-toast";
+
 import { CartCard } from "../../components";
 import { useCart } from "../../context/cart-context";
 import styles from "./CartPage.module.css";
@@ -9,6 +11,7 @@ export function CartPage() {
 
   return (
     <div className={styles.cart_page}>
+      <Toaster position="top-center" reverseOrder={false} />
       <h1 className={styles.section_title}>Cart</h1>
       {cart.length === 0 ? (
         <h2 className={styles.section_title}>Cart is empty..</h2>
@@ -31,7 +34,7 @@ export function CartPage() {
                 ))}
               </div>
               <div className={styles.total_amount}>
-                <span>Total Amount</span>{" "}
+                <span className={styles.total_amount_header}>Total Amount</span>{" "}
                 <span>
                   {cart.reduce(
                     (prev, acc) => acc.price * acc.quantity + prev,
